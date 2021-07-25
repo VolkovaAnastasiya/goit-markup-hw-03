@@ -21,10 +21,10 @@ html {
 }
 
 body {
-  background: var(--primari-white-color);
-  color: var(--primari-text-color);
   margin: 0;
 
+  background: var(--primari-white-color);
+  color: var(--primari-text-color);
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
 }
@@ -46,50 +46,57 @@ p {
   margin-bottom: 0;
 }
 
-.header {
+.header.container {
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
 }
-/* logo */
 
+/* logo */
 .main-nav {
   display: flex;
-  padding-top: 24px;
-  padding-bottom: 25px;
 }
-.logo {
-  color: var(--logo-nav-color);
 
+.logo {
+  padding-top: 24px;
+  margin-right: 90px;
+
+  color: var(--logo-nav-color);
   font-family: Raleway, sans-serif;
   font-weight: bold;
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none;
-  align-content: center;
 }
 
 .logo-web {
   color: var(--accent-color);
 }
 
-/* site-nav */
+.logo-studio {
+  color: var(--primari-white-color);
+}
 
+/* site-nav */
 .site-nav {
   display: flex;
-  align-content: center;
+}
+
+.site-nav-item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .site-nav-link {
-  color: var(--logo-nav-color);
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 
+  color: var(--logo-nav-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.33;
   letter-spacing: 0.02em;
   text-decoration: none;
-
-  align-items: center;
 }
 
 .site-nav-link:hover,
@@ -103,8 +110,7 @@ p {
 
 .auth-nav.list {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  margin-left: auto;
 }
 
 .auth-nav-link {
@@ -115,6 +121,18 @@ p {
   line-height: 1.33;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.auth-nav-item {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.auth-nav-item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .auth-nav-link:hover,
@@ -147,6 +165,7 @@ p {
   margin-right: auto;
   padding-top: 200px;
   padding-bottom: 30px;
+  width: 696px;
 
   color: var(--primari-white-color);
 
@@ -155,19 +174,18 @@ p {
   line-height: 1.36;
 }
 .hero-button {
+  width: 200px;
+  height: 50px;
+  margin-bottom: 200px;
+  border-radius: 4px;
+
   color: var(--primari-white-color);
   background-color: var(--accent-color);
-
   font-weight: bold;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
   cursor: pointer;
-
-  width: 200px;
-  height: 50px;
-  margin-bottom: 200px;
-  border-radius: 4px;
 }
 
 .hero-button:focus,
@@ -178,12 +196,39 @@ p {
 
 /* section */
 .container {
+  display: block;
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
   outline: 2px solid #18e85d;
+}
+
+.feature-list {
+  display: flex;
+}
+
+.feature-box {
+  display: block;
+  height: 101px;
+  width: calc((100%-90px) / 4);
+  margin-right: 30px;
+  outline: 2px solid red;
+}
+
+.feature-box:last-child {
+  margin-right: 0px;
+}
+
+.feature-title {
+  padding-bottom: 10px;
+  /* margin-top: 94px; */
+  /* margin-bottom: 94px; */
+}
+
+.feature-text {
+  display: block;
 }
 
 .section-title {
@@ -193,6 +238,40 @@ p {
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
+}
+
+.button-filter {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.projects-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* .projects-item {
+  width: 370px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+} */
+
+.projects-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.projects-item:nth-last-child(-n + 3) {
+  margin-bottom: 0px;
+}
+
+.projects-item {
+  width: calc ((100%-60px)/3);
+  margin-right: 30px;
+  margin-bottom: 30px;
 }
 
 .projects-title {
@@ -209,6 +288,11 @@ p {
   line-height: 1.87;
 }
 
+.feature-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .feature-title {
   color: var(--title-text-color);
 
@@ -219,9 +303,15 @@ p {
   padding-bottom: 10px;
 }
 
+.feature-list {
+  display: flex;
+}
+
 .feature-text {
+  display: flex;
+  flex-wrap: wrap;
   font-size: 14px;
-  line-height: 1.7px;
+  line-height: 1.7;
 }
 
 .title-el {
@@ -237,6 +327,17 @@ p {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+}
+
+/* work */
+.work-cards {
+  display: flex;
+}
+
+/* team */
+
+.team-cards {
+  display: flex;
 }
 
 /* Button */
@@ -263,9 +364,6 @@ p {
 /*  section footer */
 .footer {
   background-color: var(--hero-background-color);
-}
-
-.address-footer {
 }
 
 .address {
